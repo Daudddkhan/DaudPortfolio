@@ -15,14 +15,14 @@ app.post("/contact", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: process.env.MAIL_USER,
+    to: process.env.EMAIL_USER,
     subject: `New Message from Portfolio: ${name}`,
     html: `
       <h3>New Contact Form Submission</h3>
